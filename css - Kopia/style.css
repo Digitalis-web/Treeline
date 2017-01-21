@@ -1,0 +1,1156 @@
+/*Ajego Design css */
+html {
+	width: 100%;
+	height: 100%;
+	overflow-x: auto;
+}
+body {
+	width: 100%;
+	height: 100%;
+	overflow-x: auto;
+	background: #000;
+}
+document {
+	overflow-x: auto;
+}
+/* Gör om scrollbaren så den ser mer modern ut, funkar dock endast på chrome och safari J-F */
+::-webkit-scrollbar { /* Detta är för själva scrollbaren, alltså den som går hela vägen J-F */
+	background-color: rgba(255, 255, 255 , 0.5);
+	width:10px;
+}
+::-webkit-scrollbar-track { /* Spåret som den där saken åker i typ J-F */
+	webkit-box-shadow: inset 0 0 5px rgba(0, 0 ,0 , 1);
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb { /* Själva saken som visar var på sidan man är J-F */
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.5);
+}
+/*================================================ Dots start ===========================================================*/
+
+/* Container för dom där prickarna som ska visa vilken sida man är på J-F */
+.page-dots-div {
+	position: fixed;
+	background: transparent;
+	right: 3%;
+	z-index: 100;
+}
+/* Klass för varje prick som motsvarar en sida J-F*/
+.page-dot {
+	padding: 0;
+	margin: 0;
+	background-color: rgba(150,150,150, 0.8);
+	width: 100%;
+	border-radius: 50%; /* gör diven helt rund J-F */
+	border: 3px white solid;
+}
+.page-dots-div a {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+.selected-dot {
+	background-color: rgb(255,136,0);
+}
+/*================================================ Dots End ============================================================*/
+/*================================================ Approach images start ================================================*/
+
+/* Klass för varje bild som finns med på approach sidan - JF*/
+.approach-image {
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+}
+/* Texten som står på bilderna när man inte hovrar på den - JF*/
+.image-text {
+	position: absolute;
+	font-weight: 700;
+	color: white;
+	margin: auto;
+	top: 10%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+/* The hover effect should only happend on desktop version JF*/
+@media screen and (min-width: 992px) {
+	/* Texten som bara syns när man hovrar på bilderna - JF */
+	.hidden-image-text {
+		display: box;
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		visibility: hidden;
+		color: black;
+		font-size: 1.2em;
+		padding-left: 10%;
+		padding-right: 10%;
+		font-weight: 700;
+		-webkit-transition: top 0.8s;
+		transition: top 0.8s;
+		-moz-transition: top 0.8s;
+		-o-transition: top 0.8s;
+	}
+	.image-container:hover .image-text {
+		color: black;
+	}
+	/* När man hovrar på bilden så blir den göma texten synlig - JF*/
+	.image-container:hover .hidden-image-text {
+		visibility: visible;
+		top: 30%;
+	}
+	/* När man hovrar på bilden så får den lite lägre opacitet - JF*/
+	.image-container:hover .approach-image {
+		opacity: 0.2;
+	}
+	.image-container:hover .image-services {
+		opacity: 0.2;
+	}
+}
+/*================================================ Approach images End ================================================*/
+.no-padding {
+	padding: 0px !important;
+}
+.no-padding-top {
+	padding-top: 0px !important;
+}
+.position-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.background-slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+.background-slider-image {
+	min-width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+/*defult a for al sizea OG*/
+a {
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.light {
+	font-weight: 400;
+}
+
+/*Nav Desktop version OG*/
+@media screen and (min-width: 992px) {
+	.navbar-custom .navbar-brand {
+		font-weight: 700;
+	}
+	.navbar-custom .navbar-brand:focus {
+		outline: 0;
+	}
+	.navbar-custom .navbar-brand .navbar-toggle {
+		padding: 4px 6px;
+		font-size: 1em;
+	}
+	.navbar-custom .navbar-brand .navbar-toggle:focus, .navbar-custom .navbar-brand .navbar-toggle:active {
+		outline: 0;
+	}
+	.navbar-custom .nav li a {
+		/* Animerar strecket som kommer när man hovrar på saker i naven J-F */
+		webkit-transition: border-bottom .3s ease-in-out;
+		moz-transition: border-bottom .3s ease-in-out;
+		transition: border-bottom .3s ease-in-out;
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 5px; /* Avgör hur långt mellanrum det är mellan texten och border-bottom J-F*/
+		margin-right: 30px; /* Avståndet mellan varje sak i naven J-F*/
+	}
+	.nav-text {
+		color: white;
+	}
+	.navbar-custom .nav li a:focus, .navbar-custom .nav li a:active {
+		outline: 0;
+		background-color: transparent;
+		color: white;
+	}
+	.navbar-custom .nav li .active {
+		outline: 0;
+	}
+	/* När man hovrar på ett objekt i naven så kommer ett streck under texten J-F*/
+	.navbar-custom .nav li a:hover {
+		outline: 0;
+		border-bottom: 5px rgba(255,136,0, 1) solid;
+		color: white;
+		background-color: transparent;
+	}
+	.nav-container {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		width: 100%;
+		padding-right: 100px !important;
+		padding-left: 100px !important;
+	}
+	.navbar-custom {
+		padding: 20px 0;
+		border-bottom: 0;
+		letter-spacing: 1px;
+		background: 0 0;
+		color: #fff;
+		-webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+		-moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+		transition: background .5s ease-in-out, padding .5s ease-in-out;
+	}
+	.navbar-custom.top-nav-collapse {
+		padding: 0;
+		background: rgba(255,255,255, 0.96);
+		-moz-box-shadow: 0px 0px 10px black;
+		-webkit-box-shadow: 0px 0px 10px black;
+		box-shadow: 0px 0px 10px black;
+	}
+	/*Logo styling*/
+	.logo {
+		width: 160px;
+		margin-top: 10px;
+		position: absolute;
+	}
+	/*Dark version of logo*/
+	#logo-dark {
+		visibility: hidden;
+	}
+	.navbar-brand {
+		margin: 0;
+		padding: 0;
+	}
+}
+/*front page styling OG*/
+.intro {
+	display: table;
+	width: 100%;
+	height: 100%;
+	padding: 100px 0;
+	text-align: center;
+	color: #fff;
+	background: transparent;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+.intro .intro-body {
+	display: table-cell;
+	vertical-align: middle;
+}
+.brand-heading {
+	color: rgb(255,255,255);
+}
+.white {
+	color: white !important;
+}
+.black {
+	color: black !important;
+}
+#imageSlider {
+	height: 100%;
+	overflow: hidden;
+	margin: auto;
+	margin-bottom: 20px;
+	z-index: -1;
+}
+/* Listan över bilder i bildspelet - JF*/
+#imageSlider ul {
+	display: block;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+/* Varje item i bildspelet, varje item innehåller en bild - JF*/
+#imageSlider ul li {
+	float: left;
+	list-style-type: none;
+	height: 100%;
+	background-size: cover;
+}
+/* Gör så bilden i bildspelet fyller ut hela bredden på diven - JF*/
+#imageSlider ul li img {
+	width: 100%;
+	height: 100%
+}
+/* Texten i bildspelet  - JF*/
+#imageSlider ul li p {
+	font-size: 3em;
+	margin: 0;
+	padding: 0;
+	background-color: rgba(255,255,255,0.5);
+	padding-left: 20px;
+	position: relative;
+	bottom: 100px;
+}
+/*the button on the front page OG*/
+.btn-circle {
+	border: 2px solid #fff;
+	border-radius: 100%!important;
+	color: #fff;
+	background: 0 0;
+	-webkit-transition: background .3s ease-in-out;
+	-moz-transition: background .3s ease-in-out;
+	transition: background .3s ease-in-out;
+}
+/*Pulsating effect OG*/
+.btn-circle:hover, .btn-circle:focus {
+	outline: 0;
+	color: #fff;
+	background: rgba(255,255,255,.1);
+}
+/*pulsing effect button OG*/
+.btn-circle i.animated {
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 1s;
+	-moz-transition-property: -moz-transform;
+	-moz-transition-duration: 1s;
+}
+/*button effekt OG*/
+.btn-circle:hover i.animated {
+	-webkit-animation-name: pulse;
+	-moz-animation-name: pulse;
+	-webkit-animation-duration: 1.5s;
+	-moz-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+}
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	50% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@-moz-keyframes pulse {
+	0% {
+		-moz-transform: scale(1);
+		transform: scale(1);
+	}
+	50% {
+		-moz-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	100% {
+		-moz-transform: scale(1);
+		transform: scale(1);
+	}
+}
+::-moz-selection {
+	text-shadow: none;
+	color: rgba(254,126,23,1);
+}
+::selection {
+	text-shadow: none;
+	color: rgba(254,126,23,1);
+}
+.orange-selection::-moz-selection {
+	text-shadow: none;
+	color: rgba(102,102,102,1);
+}
+.orange-selection::selection {
+	text-shadow: none;
+	color: rgba(102,102,102,1);
+}
+img::selection {
+	background: 0 0;
+}
+img::-moz-selection {
+	background: 0 0;
+}
+/* Section 1 OG*/
+#page1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#fff, #e7e7e7);
+	left: 0;
+	top: 100%;
+	z-index: 2;
+}
+/*Section 2 OG*/
+#page2 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 200%;
+	background-color: #FFFFFF;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+/*Section 4 OG*/	
+#page3 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 300%;
+	z-index: 0;
+}
+/*Page 5 or fotter styling OG*/
+#page4 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 400%;
+	background: url(../img/crater.png) no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+.footer {
+	background: url(../img/crater.png) no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+/*
+	#page4-1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 300%;
+	background: url(../img/crater.png) no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}*/
+.icons {
+	/*position: absolute;*/
+	/*bottom: 30%;*/
+	color: #FFF;
+}
+.findmore {
+	color: #FFF;
+	position: absolute;
+	bottom: 5%;
+}
+.footerHeader {
+	color: #FFF;
+	font-size: 4em;
+}
+.stalk-icon {
+	color: #FFF;
+}
+.stalk-icon-text {
+	color: #FFF;
+}
+.stalk-icon-text p {
+	word-wrap: break-word;
+}
+/* Container för chat bubblan till klockan samt pilen till chatbubblan J-F*/
+.chat-bubble-container {
+	z-index: 3;
+	position: fixed;
+	width: 250px;
+	height: 100px;
+	right: 100px;
+	bottom: 9%;
+}
+.chat-bubble-fade {
+	opaticy: 0;
+}
+/*  Chat bubblan J-F*/
+.chat-bubble {
+	z-index: 4;
+	width: 100%;
+	height: 100px;
+	color: white;
+	text-align: center;
+	font-size: 2em;
+	line-height: 150%;
+	background: #666;
+	padding-top: 5px;
+	-moz-box-shadow: 0px 0px 10px black;
+	-webkit-box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 10px black;
+}
+/* Klassen för en liten div som roteras 45 grader och är halvt gömt så den ser ut som en pil J-F */
+.chat-bubble-arrow {
+	z-index: -1;
+	position: relative;
+	background: #666;
+	width: 50px;
+	height: 50px;
+	left: 100px;
+	bottom: 40px;
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Safari */
+	transform: rotate(45deg);
+	-moz-box-shadow: 0px 0px 10px black;
+	-webkit-box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 10px black;
+}
+
+
+.presentation h1 {
+	color: #666666;
+}
+.presentation h4 {
+	font-size: 2em;
+	font-weight: 550;
+	text-transform: none;
+	color: #666666;
+}
+
+/* desktop size for the smaller text in second section JF*/
+@media screen and (min-width: 992px) {
+	.presentation h4 {
+		font-size: 2em;
+	}
+}
+/*Add extra space to something 50 px OG*/
+.space-50 {
+	height: 50px;
+	display: block;
+}
+.no-margin {
+	margin: 0 !important;
+}
+.no-margin-top {
+	margin-top: 0 !important;
+}
+.portfolio-image {
+	background: url(../img/portfolio-images/city-sunny-buildings-skyscrapers.jpg) no-repeat;
+	background-size: 100% 100%;
+	opacity: 0.7;
+	-webkit-transition: 1s ease;
+}
+.portfolio-image-2 {
+	background: url(../img/portfolio-images/sea-city-mountains-landmark.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+/*portfolio hovering SB*/
+.portfolio-image:hover {
+	opacity: 1;
+	-webkit-transition: 1s ease;
+}
+/* Class for the icons on the "what we do"-screen J-F */
+.about-icon {
+	width: auto;
+	max-width: 70%;
+	height: auto;
+	max-height: 80%;
+}
+body {
+	webkit-tap-highlight-color: rgba(255,255,255,.2);
+}
+/*=====================================Nav tablet/ mobile start OG ======================================*/
+
+.nav-tablet {
+	z-index: 1031; /* högre z-index än nav-baren */
+	position: fixed;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/* The background for the nav OG*/
+.nav-tablet-bg {
+	z-index: 1031; /* högre z-index än nav-baren */
+	position: absolute;
+	background: rgba(102,102,102,.8);
+	height: 100%;
+	width: 100%;
+}
+/*first section of links OG*/
+.nav-content {
+	position: absolute;
+	background: #fe7e17;
+	list-style: none;
+	z-index: 101;
+}
+/*a styling first row og*/
+.nav-content-a {
+	display: block;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+/* The text on the button JF*/
+.nav-content-a p {
+	color: #FFF;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1em;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+/*bell img OG*/
+.nav-content-img {
+	height: 70%;
+	max-width: 100%;
+	left: 50%;
+}
+/*logo styling OG*/
+.nav-logo {
+	height: 9%;
+	position: absolute;
+	top: 5%;
+}
+/*the x btn for nav tablet OG*/
+.nav-x-tablet {
+	height: 8%;
+	color: #FFF;
+	position: absolute;
+	top: 5%;
+	right: 10%;
+}
+/* nav-bar for tablet and mobile which is visible all the time when the nav is not open JF*/
+.nav-bar-tablet {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 10%;
+	z-index: 101;
+	background: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	/* a small shadow under the nav*/
+	-moz-box-shadow: 0px 0px 10px black;
+	-webkit-box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 10px black;
+}
+/*======================================== Nav tablet end ============================================*/
+/*======================================== choose-us start ============================================*/
+.choose-us {
+	position: absolute;
+}
+.choose-us h1 {
+	color: #666;
+}
+.choose-us h2 {
+	font-size: 1.5em;
+	color: #666;
+	margin: 3%;
+}
+.choose-us img {
+	width: 15%;
+	margin-top: 15%;
+}
+.padding-choose {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.choose-margin-h1 {
+	margin-bottom: 0%;
+}
+.choose-margin-h2 {
+	margin-bottom: 10px;
+}
+/*======================================== choose-us end ============================================*/
+
+/*======================================== proposal start ============================================*/
+.proposal-bg {
+	z-index: 1031;
+	position: absolute;
+	background: rgba(60,60,60,.9);
+	height: 3000px;
+	width: 100%;
+	overflow-y: scroll;
+}
+.proposal-form {
+	position: absolute;
+	top: 5%;
+	left: 0;
+	right: 0;
+}
+/*fonts proposal page*/
+.proposal-form h3, .proposal-form h2 {
+	color: white;
+}
+.proposal-x {
+	position: absolute;
+	right: 10%;
+	color: white;
+}
+
+/*========================================= email form =======================================*/
+/*form styling*/
+.input-group {
+	color: #FFF;
+	background: 0, 0, 0, .0;
+	border: thick #fe7e17 solid;
+	border-radius: 5px;
+	margin-top: 2%;
+	font-size: 1.5em;
+	width: 48.5%;
+	float: left;
+}
+/* Gives some extra margin to some of the input fields JF*/
+.margin-left-3 {
+	margin-left: 3%;
+}
+/* the input field in the form JF*/
+.input-group input {
+	background: 0, 0, 0, .0;
+	color: #FFF;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+/*icon for form*/
+.input-group span {
+	background: 0, 0, 0, .0;
+	color: #FFF;
+	border: 0;
+	z-index: 1040;
+}
+/*text area styling OG*/
+.input-group textarea {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #FFF;
+	background: 0, 0, 0, .0;
+	border: 0;
+	padding-top: 10px;
+	font-size: 1em;
+	resize: none;
+}
+/*submit btn OG*/
+.submitbtn {
+	width: 30%;
+	margin-top: 2%;
+	color: #FFF;
+	background: #fe7e17;
+	border: 0px;
+	border-radius: 5px;
+	font-size: 2em;
+	padding: 0;
+	height: 7%;
+}
+
+/* Class for icon on the bigger textfield JF*/
+.icon-big {
+	vertical-align: initial;
+	position: relative;
+	top: -4px;
+}
+#feedback {
+	color: rgb(254,126,23);
+}
+/*======================================== email form end ==============================================*/
+
+.show-on-hover-div:hover .show-on-hover {
+	margin-top: -30px;
+	-webkit-transition: margin-top 0.8s;
+	transition: margin-top 0.8s;
+	-moz-transition: margin-top 0.8s;
+	-o-transition: margin-top 0.8s;
+	visibility: visible;
+}
+.show-on-hover-div:hover .hide-on-hover {
+	visibility: hidden;
+}
+.show-on-hover-div * {
+	-webkit-transition: margin-top 0s;
+	transition: margin-top 0s;
+	-moz-transition: margin-top 0s;
+	-o-transition: margin-top 0s;
+}
+
+@media screen and (min-width: 992px) {
+	.show-on-hover {
+		visibility: hidden;
+		margin-top: 35px;
+	}
+}
+.background-white {
+	background: #FFF;
+}
+.background-grey1 {
+	background: linear-gradient(#fff, #e7e7e7);
+}
+.background-grey2 {
+	background: linear-gradient(#e7e7e7, #D0D0D0);
+}
+.background-grey3 {
+	background: linear-gradient(#D0D0D0, #e7e7e7);
+}
+.background-orange {
+	background: #fe7e17;
+}
+.float-left {
+	float: left !important;
+}
+.full-width {
+	width: 100%;
+}
+.full-height {
+	height: 100%;
+}
+.double-height {
+	height: 200%;
+}
+.full-size {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.position-aboslute {
+	position: absolute;
+}
+.common-questions h1 {
+	color: rgb(102,102,102);
+}
+.common-questions h3 {
+	color: rgb(254,126,23);
+}
+/*=================================================== Services ====================================================*/
+.logos-showcase-div {
+	padding: 5%;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+.logos-showcase-div:hover {
+	padding: 0%;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+.logos-showcase {
+}
+.image-services {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/* desktop */
+@media screen and (min-width: 992px) {
+	.image-text {
+		font-size: 2.5em;
+	}
+	.content-section {
+		padding-top: 6%;
+	}
+	/*Defult styling for headers OG*/
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0 0 35px;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 1px;
+		font-family: 'Dosis', sans-serif;
+	}
+	p {
+		margin: 0 0 35px;
+		font-size: 1em;
+		line-height: 1.6;
+	}
+	/* The circle button on the first page */
+	.btn-circle {
+		width: 70px;
+		height: 70px;
+		margin-top: 20px;
+		padding: 7px 16px;
+		font-size: 3em;
+	}
+	/* The big header text on the first page JF*/
+	.intro .intro-body .brand-heading {
+		font-size: 3em;
+	}
+	/* The text on the philosophy-section*/
+	.philosophy p {
+		font-size: 2.3em;
+		margin-top: 4%;
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	/* Header on the philosophy section */
+	.philosophy h4 {
+		font-size: 3em;
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	/* Stora texten på andra sidan*/
+	.presentation h1 {
+		font-size: 3em;
+	}
+	/* mindre texten på andra sidan*/
+	.presentation h4 {
+		font-size: 2em;
+	}
+}
+
+/*======================================================= tablet =================================================================*/
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.content-section {
+		padding-top: 13%;
+	}
+	/*Defult styling for headers OG*/
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0 0 25px;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 1px;
+		font-family: 'Dosis', sans-serif;
+	}
+	/*Defult styling for p tablet/mobil OG*/
+	p {
+		margin: 0 0 20px;
+		font-size: 1em;
+		line-height: 1.5;
+	}
+	/* The circle button on the first page */
+	.btn-circle {
+		width: 60px;
+		height: 60px;
+		margin-top: 0px;
+		padding: 6px 0px;
+		font-size: 2.5em;
+	}
+	/* The big header text on the first page JF*/
+	.intro .intro-body .brand-heading {
+		font-size: 2em;
+	}
+	/* The text on the philosophy-section*/
+	.philosophy p {
+		font-size: 2em;
+		margin-top: 4%;
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	/* Header on the philosophy section */
+	.philosophy h4 {
+		font-size: 1.8em;
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	philosophy {
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	/* Stora texten på andra sidan*/
+	.presentation h1 {
+		font-size: 3em;
+	}
+	/* mindre texten på andra sidan*/
+	.presentation h4 {
+		font-size: 1.5em;
+	}
+	.tblmb-nav-btn {
+		color: #666;
+		position: fixed;
+	}
+	.padding-choose {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+	/* hovering function for approach page */
+	.hidden-image-text {
+		display: box;
+		position: absolute;
+		top: 50%;
+		visibility: hidden;
+		color: black;
+		padding-left: 10%;
+		padding-right: 10%;
+		font-size: 0.8em;
+		-webkit-transition: top 0.8s;
+		transition: top 0.8s;
+		-moz-transition: top 0.8s;
+		-o-transition: top 0.8s;
+	}
+	.image-container:hover .image-text {
+		color: black;
+	}
+	/* När man hovrar på bilden så blir den göma texten synlig - JF*/
+	.image-container:hover .hidden-image-text {
+		visibility: visible;
+		top: 30%;
+	}
+	/* När man hovrar på bilden så får den lite lägre opacitet - JF*/
+	.image-container:hover .approach-image {
+		opacity: 0.2;
+	}
+	.image-container:hover .image-services {
+		opacity: 0.2;
+	}
+	
+	/* The text on the button JF*/
+	.nav-content-a p {
+		color: #FFF;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 1.4em;
+		font-weight: 600;
+		letter-spacing: 1px;
+	}
+}
+
+/*======================================================= mobile ================================================================*/
+@media screen and (max-width: 767px) {
+	
+	
+	
+	/* Container för dom där prickarna som ska visa vilken sida man är på J-F */
+	.page-dots-div {
+		position: fixed;
+		background: transparent;
+		right: 5%;
+		z-index: 100;
+	}
+	
+	.content-section {
+		padding-top: 13%;
+	}
+	/* Gives the rows some space between them JF*/
+	.common-questions-row div {
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+	}
+	.common-questions-row h3 {
+		margin-bottom: 5px;
+	}
+	/* Font sizes for FAQ*/
+	.common-questions h1 {
+		font-size: 1em;
+	}
+	.common-questions h3 {
+		font-size: 0.7em;
+		letter-spacing: 0.4px;
+	}
+	.common-questions p {
+		font-size: 0.7em;
+		letter-spacing: 0.4px;
+	}
+	/*Defult styling for headers OG*/
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0 0 20px;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 1px;
+		font-family: 'Dosis', sans-serif;
+	}
+	/*Defult styling for p tablet/mobil OG*/
+	p {
+		margin: 0 0 15px;
+		font-size: 1em;
+		line-height: 1.5;
+	}
+	/* The circle button on the first page */
+	.btn-circle {
+		width: 50px;
+		height: 50px;
+		margin-top: 0px;
+		padding: 5px 0px;
+		font-size: 2em;
+	}
+	/* The big header text on the first page JF*/
+	.intro .intro-body .brand-heading {
+		font-size: 1.5em;
+	}
+	/* The text on the philosophy-section*/
+	.philosophy p {
+		font-size: 1.3em;
+		margin-top: 4%;
+		margin-left: 6%;
+		margin-right: 6%;
+	}
+	/* Header on the philosophy section */
+	.philosophy h4 {
+		font-size: 2em;
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	philosophy {
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	/* Stora texten på andra sidan*/
+	.presentation h1 {
+		font-size: 2em;
+	}
+	/* mindre texten på andra sidan*/
+	.presentation h4 {
+		font-size: 1em;
+	}
+	.tblmb-nav-btn {
+		color: #666;
+		position: fixed;
+		height: auto;
+	}
+	.choose-us {
+		padding: 5%;
+	}
+	.choose-us h1 {
+		font-size: 1.7em;
+		margin-bottom: 35px;
+	}
+	.choose-us img {
+		margin-top: 0;
+	}
+	.padding-choose {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	/* hovering function for approach page */
+	.hidden-image-text {
+		display: box;
+		position: absolute;
+		top: 50%;
+		visibility: hidden;
+		color: black;
+		padding-left: 10%;
+		padding-right: 10%;
+		font-size: 0.8em;
+		-webkit-transition: top 0.8s;
+		transition: top 0.8s;
+		-moz-transition: top 0.8s;
+		-o-transition: top 0.8s;
+	}
+	.image-container:hover .image-text {
+		color: black;
+	}
+	/* När man hovrar på bilden så blir den göma texten synlig - JF*/
+	.image-container:hover .hidden-image-text {
+		visibility: visible;
+		top: 30%;
+	}
+	/* När man hovrar på bilden så får den lite lägre opacitet - JF*/
+	.image-container:hover .approach-image {
+		opacity: 0.2;
+	}
+	.image-container:hover .image-services {
+		opacity: 0.2;
+	}
+	.presentation h4 {
+		font-size: 0.8em;
+	}
+}
+p, body {
+	font-family: "Open Sans", sans-serif !important;
+}
+a {
+	font-family: "Open Sans", sans-serif !important;
+}
+/* fäger som ska andvändas är #666 / rgb(102,102,102) och #fe7e17 / rgb(254,126,23) OG */
